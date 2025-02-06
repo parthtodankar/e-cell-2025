@@ -6,22 +6,28 @@ import EventCard from "./event-card"
 
 const events = [
   {
-    title: "Startup Summit",
-    description:
-      "Join us for a day of inspiring talks from successful entrepreneurs and innovators. Learn about the latest trends in the startup ecosystem and network with like-minded individuals.",
-    image: "/placeholder.svg?height=600&width=800",
-  },
-  {
-    title: "Hackathon 2024",
-    description:
-      "Put your coding skills to the test in our annual hackathon. Work on exciting projects, solve real-world problems, and compete for amazing prizes.",
-    image: "/placeholder.svg?height=600&width=800",
-  },
-  {
-    title: "Pitch Perfect",
+    title: "Pitch Perfect Sales",
     description:
       "Refine your startup pitch with guidance from industry experts. Get valuable feedback and improve your chances of securing funding for your venture.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/core-images/pitch_perfect_sales.jpg",
+  },
+  {
+    title: "Eureka",
+    description:
+      "Join us for Eureka, a platform to showcase innovative ideas and solutions.",
+    image: "/core-images/eureka.jpg",
+  },
+  {
+    title: "Vyapar Pe Vichar",
+    description:
+      "Participate in Vyapar Pe Vichar, where we discuss business strategies and market trends.",
+    image: "/core-images/vyapar_pe_vichar.jpg",
+  },
+  {
+    title: "Case Chronicles",
+    description:
+      "Engage in Case Chronicles, a case study competition that challenges your analytical skills.",
+    image: "/core-images/case_chronicles.jpg",
   },
 ]
 

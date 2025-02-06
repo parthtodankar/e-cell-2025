@@ -5,19 +5,19 @@ import { motion } from "framer-motion"
 import { Linkedin, Instagram } from "lucide-react"
 
 const teamMembers = [
-  { name: "Niharika Ahuja", role: "President", image: "/core-images/niharika.jpg" },
-  { name: "Aryan Masali", role: "Vice President", image: "/core-images/aryan.jpg" },
-  { name: "Pushkar Patil", role: "General Secretary", image: "/core-images/pushkar.jpg" },
-  { name: "Niral Pillewan", role: "Chief Execution Officer", image: "/core-images/niral.jpg" },
-  { name: "Aryan Joshi", role: "Chief Event Organizer", image: "/core-images/aryan_joshi.jpg" },
-  { name: "Mihir Agashe", role: "Chief Marketing Officer", image: "/core-images/mihir.jpg" },
-  { name: "Parth Todankar", role: "Chief Technical Officer", image: "/core-images/parth.jpg" },
-  { name: "Meet Raval", role: "Public Relations Officer", image: "/core-images/meet.jpg" },
-  { name: "Aarya Patil", role: "IIC Chief", image: "/core-images/aarya.jpg" },
-  { name: "Vishnu Gupta", role: "Treasurer", image: "/core-images/vishnu.png" },
+  { name: "Niharika Ahuja", role: "President", image: "/core-images/niharika.jpg", instagram: "https://www.instagram.com/niharikaahujaa/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/niharika-ahuja-6bb42725b/" },
+  { name: "Aryan Masali", role: "Vice President", image: "/core-images/aryan.jpg", instagram: "https://www.instagram.com/aryanmasali_3108/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/aryan-masali-13b823254/" },
+  { name: "Pushkar Patil", role: "General Secretary", image: "/core-images/pushkar.jpg", instagram: "https://www.instagram.com/pushkarpatil._/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/patil-pushkar/" },
+  { name: "Niral Pillewan", role: "Chief Execution Officer", image: "/core-images/niral.jpg", instagram: "https://www.instagram.com/niralpillewan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "" },
+  { name: "Aryan Joshi", role: "Chief Event Organizer", image: "/core-images/aryan_joshi.jpg", instagram: "https://www.instagram.com/aryxnjoshi/?utm_source=ig_web_button_share_sheet", linkedin: "" },
+  { name: "Mihir Agashe", role: "Chief Marketing Officer", image: "/core-images/mihir.jpg", instagram: "https://www.instagram.com/comm3mihir?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/mihir-agashe-92597b249/" },
+  { name: "Parth Todankar", role: "Chief Technical Officer", image: "/core-images/parth.jpg", instagram: "https://www.instagram.com/parth_tdnkr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/parth-todankar-986146184/" },
+  { name: "Meet Raval", role: "Public Relations Officer", image: "/core-images/meet.jpg", instagram: "https://www.instagram.com/meet_raval_27?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/meet-raval-35b021253/" },
+  { name: "Aarya Patil", role: "IIC Chief", image: "/core-images/aarya.jpg", instagram: "https://www.instagram.com/aaryapatiill/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/aarya-patil-98166625a/" },
+  { name: "Vishnu Gupta", role: "Treasurer", image: "/core-images/vishnu.png", instagram: "https://www.instagram.com/vishnu_gupta_10?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "" },
 ]
 
-const ProfileCard = ({ name, role, image }: { name: string; role: string; image: string }) => {
+const ProfileCard = ({ name, role, image, instagram, linkedin }: { name: string; role: string; image: string; instagram: string; linkedin: string }) => {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -37,12 +37,16 @@ const ProfileCard = ({ name, role, image }: { name: string; role: string; image:
         initial={{ opacity: 0 }}
         animate={{ opacity: isHovered ? 1 : 0 }}
       >
-        <a href="#" className="text-zinc-400 hover:text-blue-500 transition-colors">
-          <Linkedin size={24} />
-        </a>
-        <a href="#" className="text-zinc-400 hover:text-pink-500 transition-colors">
-          <Instagram size={24} />
-        </a>
+        {linkedin && (
+          <a href={linkedin} className="text-zinc-400 hover:text-blue-500 transition-colors" target="_blank" rel="noopener noreferrer">
+            <Linkedin size={24} />
+          </a>
+        )}
+        {instagram && (
+          <a href={instagram} className="text-zinc-400 hover:text-pink-500 transition-colors" target="_blank" rel="noopener noreferrer">
+            <Instagram size={24} />
+          </a>
+        )}
       </motion.div>
     </motion.div>
   )
@@ -55,7 +59,7 @@ const TeamSection = () => {
         <h2 className="text-4xl font-bold text-center mb-12 text-white">Our Team</h2>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {teamMembers.map((member, index) => (
-            <ProfileCard key={index} name={member.name} role={member.role} image={member.image} />
+            <ProfileCard key={index} name={member.name} role={member.role} image={member.image} instagram={member.instagram} linkedin={member.linkedin} />
           ))}
         </div>
       </div>
