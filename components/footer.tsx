@@ -17,7 +17,7 @@ const Footer = () => {
               Empowering the next generation of entrepreneurs through innovation, education, and collaboration.
             </p>
           </div>
-
+ {/* added footer  */}
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
@@ -92,7 +92,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
-          </div>
+          </div> 
         </div>
 
         {/* Bottom Bar */}

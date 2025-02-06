@@ -1,7 +1,7 @@
 "use client"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { RetroGrid } from "@/components/magicui/retro-grid"
+import { RetroGrid } from "@/components/magicui/retro-grid"   
 import { TextAnimate } from "@/components/magicui/text-animate"
 
 const HeroSection = () => {
