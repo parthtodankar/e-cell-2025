@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu } from "lucide-react"
+import { Menu, ChevronDown } from "lucide-react"
 
 const Navbar = () => {
   const [isFloating, setIsFloating] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isTeamDropdownOpen, setIsTeamDropdownOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +35,24 @@ const Navbar = () => {
             <Link href="#about" className="text-white hover:text-primary text-sm font-bold tracking-tighter">About</Link>
             <Link href="#domains" className="text-white hover:text-primary text-sm font-bold tracking-tighter">Domains</Link>
             <Link href="#events" className="text-white hover:text-primary text-sm font-bold tracking-tighter">Events</Link>
-            <Link href="#team" className="text-white hover:text-primary text-sm font-bold tracking-tighter">Team</Link>
+            <div className="relative">
+              <button 
+                className="text-white hover:text-primary text-sm font-bold tracking-tighter flex items-center"
+                onClick={() => setIsTeamDropdownOpen(!isTeamDropdownOpen)}
+              >
+                Team <ChevronDown className="w-4 h-4 ml-1" />
+              </button>
+              {isTeamDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 bg-zinc-950/95 backdrop-blur-md rounded-md py-2 min-w-[160px]">
+                  <Link href="#team" className="block px-4 py-2 text-white hover:text-primary text-sm font-bold tracking-tighter">
+                    Core Team
+                  </Link>
+                  <Link href="/faculty-coordinators" className="block px-4 py-2 text-white hover:text-primary text-sm font-bold tracking-tighter">
+                    Faculty Coordinators
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link href="#contact" className="text-white hover:text-primary text-sm font-bold tracking-tighter">Contact</Link>
             <Link href="/e-summit" className="text-white hover:text-primary text-sm font-bold tracking-tighter">E-SUMMIT</Link>
           </div>
@@ -49,7 +67,8 @@ const Navbar = () => {
             <Link href="#about" className="text-white hover:text-primary text-sm font-bold tracking-tighter">About</Link>
             <Link href="#domains" className="text-white hover:text-primary text-sm font-bold tracking-tighter">Domains</Link>
             <Link href="#events" className="text-white hover:text-primary text-sm font-bold tracking-tighter">Events</Link>
-            <Link href="#team" className="text-white hover:text-primary text-sm font-bold tracking-tighter">Team</Link>
+            <Link href="#team" className="text-white hover:text-primary text-sm font-bold tracking-tighter">Core Team</Link>
+            <Link href="/faculty-coordinators" className="text-white hover:text-primary text-sm font-bold tracking-tighter">Faculty Coordinators</Link>
             <Link href="#contact" className="text-white hover:text-primary text-sm font-bold tracking-tighter">Contact</Link>
             <Link href="/e-summit" className="text-white hover:text-primary text-sm font-bold tracking-tighter">E-SUMMIT</Link>
           </div>

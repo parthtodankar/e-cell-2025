@@ -4,6 +4,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 import { TextReveal } from "@/components/magicui/text-reveal"
 import { RetroGrid } from "@/components/magicui/retro-grid"
 import { TextAnimate } from "@/components/magicui/text-animate"
+import { motion } from "framer-motion"
 
 const AboutSection = () => {
   return (

@@ -78,14 +78,14 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.instagram.com/ecell_rait/"
                 className="text-zinc-400 hover:text-[#e4405f] transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/e-cell-rait-motif"
                 className="text-zinc-400 hover:text-[#0077b5] transition-colors"
                 aria-label="LinkedIn"
               >
