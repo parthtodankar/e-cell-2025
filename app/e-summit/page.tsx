@@ -12,7 +12,8 @@ const ESummitPage = () => {
         <div className="w-full max-w-4xl">
           <ESummitContent />
         </div>
-      </div>
+      </div> 
+      {/* centre of tha page  */}
       {/* <Footer /> */}
     </main>
   );
