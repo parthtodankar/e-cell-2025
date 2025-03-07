@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 
+
 interface FacultyCoordinatorCardProps {
   name: string;
   role: string;

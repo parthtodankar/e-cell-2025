@@ -6,9 +6,13 @@ import ESummitContent from "@/components/ESummitContent";
 
 const ESummitPage = () => {
   return (
-    <main className="min-h-screen bg-zinc-950 text-foreground">
+    <main className="min-h-screen bg-zinc-950 text-foreground flex flex-col">
       <Navbar />
-      <ESummitContent />
+      <div className="flex flex-1 items-center justify-center px-4 py-8">
+        <div className="w-full max-w-4xl">
+          <ESummitContent />
+        </div>
+      </div>
       {/* <Footer /> */}
     </main>
   );
