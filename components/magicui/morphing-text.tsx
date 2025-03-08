@@ -91,7 +91,6 @@ const useMorphingText = (texts: string[]) => {
 interface MorphingTextProps {
   className?: string;
   texts: string[];
-  colors: string[];
 }
 
 const Texts: React.FC<Pick<MorphingTextProps, "texts">> = ({ texts }) => {
@@ -135,7 +134,6 @@ const SvgFilters: React.FC = () => (
 
 export const MorphingText: React.FC<MorphingTextProps> = ({
   texts,
-  colors,
   className,
 }) => (
   <div

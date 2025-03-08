@@ -573,6 +573,14 @@ class App {
     this.scroll.target = this.scroll.target < 0 ? -item : item;
   }
 
+  someFunction(params: { target: number }) {
+    if (!params || !this.medias || !this.medias[0]) return;
+    const width = this.medias[0].width;
+    const itemIndex = Math.round(Math.abs(params.target) / width);
+    const item = width * itemIndex;
+    this.scroll.target = params.target < 0 ? -item : item;
+  }
+
   onResize() {
     this.screen = {
       width: this.container.clientWidth,

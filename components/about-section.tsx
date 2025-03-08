@@ -2,9 +2,6 @@
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 import { TextReveal } from "@/components/magicui/text-reveal"
-import { RetroGrid } from "@/components/magicui/retro-grid"
-import { TextAnimate } from "@/components/magicui/text-animate"
-import { motion } from "framer-motion"
 
 const AboutSection = () => {
   return (
@@ -25,6 +22,7 @@ const AboutSection = () => {
             networking student enterprises from campus to incubators, seeding funds and angel investors to transform the
             newly proposed ideas into successful start-ups.
           </p>
+          <p>It&apos;s a great day!</p>
         </div>
       </div>
     </section>

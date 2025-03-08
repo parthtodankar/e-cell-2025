@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 
 const Footer = () => {
   return (
@@ -105,4 +105,4 @@ const Footer = () => {
   )
 }
 
-export default Footer 
+export default Footer

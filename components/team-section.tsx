@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Linkedin, Instagram } from "lucide-react"
+import Image from 'next/image'
 
 const teamMembers = [
   { name: "Niharika Ahuja", role: "President", image: "/core-images/niharika.jpg", instagram: "https://www.instagram.com/niharikaahujaa/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/niharika-ahuja-6bb42725b/" },
@@ -27,7 +28,7 @@ const ProfileCard = ({ name, role, image, instagram, linkedin }: { name: string;
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <img src={image} alt={name} className="h-45 w-full object-cover" style={{ objectFit: 'cover' }} />
+      <Image src={image} alt={name} width={500} height={500} />
       <div className="p-4">
         <h3 className="text-xl font-semibold text-white">{name}</h3>
         <p className="text-zinc-400">{role}</p>
