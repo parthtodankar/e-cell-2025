@@ -18,7 +18,7 @@ const AboutSection = () => {
           <TextReveal text="About Us" className="text-3xl font-bold mb-4 text-white" />
           <p className="mt-4 text-lg text-zinc-400">
             E-Cell, RAIT aims to induce an Entrepreneurial mindset into the students and air an innovative streak in
-            them. We are here to water the 'Ideas' in the bud and help them bloom into impactful endeavors through
+            them. We are here to water the {'Ideas'} in the bud and help them bloom into impactful endeavors through
             networking student enterprises from campus to incubators, seeding funds and angel investors to transform the
             newly proposed ideas into successful start-ups.
           </p>

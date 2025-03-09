@@ -1,16 +1,22 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import type { HTMLMotionProps } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-interface MagicCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  icon: React.ReactNode
-  description: string
+interface MagicCardProps extends HTMLMotionProps<"div"> {
+  icon: React.ReactNode;
+  description: string;
 }
 
-export const MagicCard: React.FC<MagicCardProps> = ({ children, className, icon, description, ...props }) => {
-  const [isHovered, setIsHovered] = useState(false)
+export const MagicCard: React.FC<MagicCardProps> = ({
+  children,
+  className,
+  icon,
+  description,
+  ...props
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
@@ -21,7 +27,7 @@ export const MagicCard: React.FC<MagicCardProps> = ({ children, className, icon,
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      {...props}
+      {...props} // Ensures Framer Motion recognizes motion event types
     >
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full p-6">
         <motion.div
@@ -66,6 +72,5 @@ export const MagicCard: React.FC<MagicCardProps> = ({ children, className, icon,
         )}
       </AnimatePresence>
     </motion.div>
-  )
-}
-
+  );
+};
