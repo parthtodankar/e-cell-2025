@@ -91,21 +91,26 @@ const useMorphingText = (texts: string[]) => {
 interface MorphingTextProps {
   className?: string;
   texts: string[];
+  colors?: string[]; // Added support for dynamic colors
 }
 
-const Texts: React.FC<Pick<MorphingTextProps, "texts">> = ({ texts }) => {
+const Texts: React.FC<Pick<MorphingTextProps, "texts" | "colors">> = ({ texts, colors }) => {
   const { text1Ref, text2Ref } = useMorphingText(texts);
+
+  const gradient = colors ? `linear-gradient(to bottom, ${colors.join(", ")})` : 
+    'linear-gradient(to bottom, #ffd319, #ff2975, #8c1eff)';
+
   return (
     <>
       <span
         className="absolute inset-x-0 top-0 m-auto inline-block w-full"
         ref={text1Ref}
-        style={{ background: 'linear-gradient(to bottom, #ffd319, #ff2975, #8c1eff)', WebkitBackgroundClip: 'text', color: 'transparent' }}
+        style={{ background: gradient, WebkitBackgroundClip: 'text', color: 'transparent' }}
       />
       <span
         className="absolute inset-x-0 top-0 m-auto inline-block w-full"
         ref={text2Ref}
-        style={{ background: 'linear-gradient(to bottom, #ffd319, #ff2975, #8c1eff)', WebkitBackgroundClip: 'text', color: 'transparent' }}
+        style={{ background: gradient, WebkitBackgroundClip: 'text', color: 'transparent' }}
       />
     </>
   );
@@ -135,6 +140,7 @@ const SvgFilters: React.FC = () => (
 export const MorphingText: React.FC<MorphingTextProps> = ({
   texts,
   className,
+  colors,
 }) => (
   <div
     className={cn(
@@ -142,7 +148,7 @@ export const MorphingText: React.FC<MorphingTextProps> = ({
       className,
     )}
   >
-    <Texts texts={texts} />
+    <Texts texts={texts} colors={colors} />
     <SvgFilters />
   </div>
 );
