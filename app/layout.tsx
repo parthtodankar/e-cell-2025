@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Bungee_Shade } from 'next/font/google'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -12,6 +13,13 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
+const bungeeShade = Bungee_Shade({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-bungee-shade',
+})
 
 export const metadata: Metadata = {
   title: "E-CELL MOTIF RAIT",
@@ -29,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={bungeeShade.variable}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
