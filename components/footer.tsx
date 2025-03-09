@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Logo and About */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <Image src="/logo.png" alt="E-cell MOTIF RAIT Logo" width={40} height={40} />
+              <Image src="/logo.svg" alt="E-CELL RAIT Logo" width={40} height={40} />
               <span className="text-xl font-bold tracking-tighter">E-Cell RAIT</span>
             </Link>
             <p className="text-zinc-400 text-sm">

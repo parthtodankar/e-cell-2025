@@ -657,7 +657,10 @@ class App {
 }
 
 interface CircularGalleryProps {
-  items?: { image: string; text: string }[];
+  items: Array<{
+    title: string;
+    image: string;
+  }>;
   bend?: number;
   textColor?: string;
   borderRadius?: number;

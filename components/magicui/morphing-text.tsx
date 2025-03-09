@@ -1,0 +1,1 @@
+// const colors = [...] // Remove if not used 
