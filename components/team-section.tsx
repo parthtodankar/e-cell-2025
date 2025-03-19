@@ -15,7 +15,7 @@ const teamMembers = [
   { name: "Parth Todankar", role: "Chief Technical Officer", image: "/core-images/parth.jpg", instagram: "https://www.instagram.com/parth_tdnkr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/parth-todankar-986146184/" },
   { name: "Meet Raval", role: "Public Relations Officer", image: "/core-images/meet.jpg", instagram: "https://www.instagram.com/meet_raval_27?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/meet-raval-35b021253/" },
   { name: "Aarya Patil", role: "IIC Chief", image: "/core-images/aarya.jpg", instagram: "https://www.instagram.com/aaryapatiill/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/aarya-patil-98166625a/" },
-  { name: "Vishnu Gupta", role: "Treasurer", image: "/core-images/vishnu.png", instagram: "https://www.instagram.com/vishnu_gupta_10?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "" },
+  { name: "Vishnu Gupta", role: "Treasurer", image: "/core-images/vishnu.jpg", instagram: "https://www.instagram.com/vishnu_gupta_10?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "" },
 ]
 
 const ProfileCard = ({ name, role, image, instagram, linkedin }: { name: string; role: string; image: string; instagram: string; linkedin: string }) => {
