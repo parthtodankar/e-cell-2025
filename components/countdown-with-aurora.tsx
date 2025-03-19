@@ -58,18 +58,25 @@ const CountdownWithAurora: React.FC<CountdownProps> = ({
 
       {/* Countdown timer overlay */}
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center px-4">
-        <div className="flex flex-wrap items-start justify-center gap-8 md:gap-12">
-          {Object.entries(timeLeft).map(([unit, value]) => (
-            <div key={unit} className="timer">
-              <div className="rounded-xl bg-black/25 backdrop-blur-sm py-8 min-w-[140px] md:min-w-[180px] flex items-center justify-center flex-col gap-4">
-                <h3 className="font-bold text-4xl md:text-7xl text-white text-center">
-                  {value.toString().padStart(2, '0')}
-                </h3>
-                <p className="text-xl md:text-2xl uppercase font-medium text-white text-center w-full tracking-wider">
-                  {unit}
-                </p>
+        <div className="flex flex-wrap items-start justify-center gap-2 md:gap-4">
+          {Object.entries(timeLeft).map(([unit, value], index) => (
+            <>
+              <div key={unit} className="timer">
+                <div className="rounded-xl bg-black/25 backdrop-blur-sm py-8 min-w-[140px] md:min-w-[180px] flex items-center justify-center flex-col gap-4">
+                  <h3 className="font-bold text-4xl md:text-7xl text-white text-center">
+                    {value.toString().padStart(2, '0')}
+                  </h3>
+                  <p className="text-xl md:text-2xl uppercase font-medium text-white text-center w-full tracking-wider">
+                    {unit}
+                  </p>
+                </div>
               </div>
-            </div>
+              {index < Object.entries(timeLeft).length - 1 && (
+                <div className="flex items-center justify-center mt-8">
+                  <span className="text-4xl md:text-7xl font-bold text-white">:</span>
+                </div>
+              )}
+            </>
           ))}
         </div>
       </div>
