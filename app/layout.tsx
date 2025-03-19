@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Bungee_Shade } from 'next/font/google'
+import { Work_Sans, Bungee_Shade } from 'next/font/google'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,6 +14,14 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-work-sans',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+})
+
 const bungeeShade = Bungee_Shade({
   weight: '400',
   subsets: ['latin'],
@@ -22,7 +30,7 @@ const bungeeShade = Bungee_Shade({
 })
 
 export const metadata: Metadata = {
-  title: "E-CELL MOTIF RAIT",
+  title: "E-CELL RAIT",
   description: "E-cell Technical Team",
   icons: {
     icon: "/favicon.ico",
@@ -33,14 +41,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" className={bungeeShade.variable}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} ${bungeeShade.variable} antialiased`}>
+      <body className={workSans.className}>
         {children}
       </body>
     </html>
