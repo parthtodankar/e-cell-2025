@@ -28,7 +28,13 @@ const ProfileCard = ({ name, role, image, instagram, linkedin }: { name: string;
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <Image src={image} alt={name} width={500} height={500} />
+      <Image 
+        src={image} 
+        alt={name}
+        width={300}
+        height={300}
+        className="w-full h-auto"
+      />
       <div className="p-4">
         <h3 className="text-xl font-semibold text-white">{name}</h3>
         <p className="text-zinc-400">{role}</p>
