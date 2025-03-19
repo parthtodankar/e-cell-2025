@@ -15,13 +15,14 @@ const SpeakerSponsors = () => {
         >
           <h2 className="text-4xl font-bold text-center mb-12 text-white">Speakers</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Add speaker cards here */}
-            <div className="bg-zinc-900/50 backdrop-blur-sm rounded-lg p-6">
-              {/* Placeholder for speaker content */}
-              <div className="aspect-square bg-zinc-800 rounded-lg mb-4"></div>
-              <h3 className="text-xl font-semibold text-white">Coming Soon</h3>
-              <p className="text-zinc-400">Stay tuned for exciting speakers!</p>
-            </div>
+            {/* Speaker cards */}
+            {[...Array(6)].map((_, index) => (
+              <div key={index} className="bg-zinc-900/50 backdrop-blur-sm rounded-lg p-6">
+                <div className="aspect-square bg-zinc-800 rounded-lg mb-4"></div>
+                <h3 className="text-xl font-semibold text-white">Coming Soon</h3>
+                <p className="text-zinc-400">Stay tuned for exciting speakers!</p>
+              </div>
+            ))}
           </div>
         </motion.div>
 
@@ -33,11 +34,12 @@ const SpeakerSponsors = () => {
         >
           <h2 className="text-4xl font-bold text-center mb-12 text-white">Sponsors</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {/* Add sponsor logos here */}
-            <div className="bg-zinc-900/50 backdrop-blur-sm rounded-lg p-6">
-              {/* Placeholder for sponsor content */}
-              <div className="aspect-video bg-zinc-800 rounded-lg"></div>
-            </div>
+            {/* Sponsor logos */}
+            {[...Array(6)].map((_, index) => (
+              <div key={index} className="bg-zinc-900/50 backdrop-blur-sm rounded-lg p-6">
+                <div className="aspect-video bg-zinc-800 rounded-lg"></div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
