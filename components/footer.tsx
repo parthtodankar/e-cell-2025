@@ -98,7 +98,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-zinc-800 mt-8 pt-8 text-center text-zinc-400 text-sm">
           <p>© {new Date().getFullYear()} E-Cell RAIT. All rights reserved.</p>
-          <p> Desgined & Developed By ECELL Motif Technical Team Rait  </p> 
+          <p> Desgined & Developed By Technical Team E-Cell RAIT  </p> 
         </div>
       </div>
     </footer>
