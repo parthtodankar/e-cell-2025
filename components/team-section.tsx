@@ -8,7 +8,7 @@ import Image from 'next/image'
 const teamMembers = [
   { name: "Niharika Ahuja", role: "President", image: "/core-images/niharika.jpg", instagram: "https://www.instagram.com/niharikaahujaa/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/niharika-ahuja-6bb42725b/" },
   { name: "Aryan Masali", role: "Vice President", image: "/core-images/aryan.jpg", instagram: "https://www.instagram.com/aryanmasali_3108/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/aryan-masali-13b823254/" },
-  { name: "Pushkar Patil", role: "General Secretary", image: "/core-images/pushkar.jpg", instagram: "https://www.instagram.com/pushkarpatil._/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/patil-pushkar/" },
+  { name: "Pushkar Patil", role: "General Secretary", image: "/core-images/pushkar.JPG", instagram: "https://www.instagram.com/pushkarpatil._/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/patil-pushkar/" },
   { name: "Niral Pillewan", role: "Chief Execution Officer", image: "/core-images/niral.jpg", instagram: "https://www.instagram.com/niralpillewan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "" },
   { name: "Aryan Joshi", role: "Chief Event Organizer", image: "/core-images/aryan_joshi.jpg", instagram: "https://www.instagram.com/aryxnjoshi/?utm_source=ig_web_button_share_sheet", linkedin: "" },
   { name: "Mihir Agashe", role: "Chief Marketing Officer", image: "/core-images/mihir.jpg", instagram: "https://www.instagram.com/comm3mihir?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/mihir-agashe-92597b249/" },

@@ -29,14 +29,15 @@ const ContactSection = () => {
         <h2 className="text-4xl font-bold text-center mb-12 text-white">Contact Us</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="rounded-lg overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3339.2980279436183!2d73.0234706752046!3d19.04427358215379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3b9947111f3%3A0x17a86217f929397!2sRamrao%20Adik%20Institute%20of%20Technology!5e1!3m2!1sen!2sin!4v1726145402660!5m2!1sen!2sin"
-              width="100%"
-              height="500"
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4434.385185155991!2d73.02297847577358!3d19.044504402959447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3db00160053%3A0x95e9ca007676b993!2sDr.%20D%20Y%20Patil&#39;s%20Ramrao%20Adik%20Institute%20Of%20Technology!5e1!3m2!1sen!2sin!4v1742497169368!5m2!1sen!2sin" 
+              width="600" 
+              height="450" 
               style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
           <motion.div
             className="bg-zinc-900 p-6 rounded-lg shadow-lg"
