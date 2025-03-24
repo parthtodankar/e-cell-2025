@@ -69,59 +69,48 @@ const ESummitSchedule = () => {
           E-Summit Schedule
         </motion.h2>
 
-        <div className="relative w-full max-w-5xl mx-auto">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-white h-full"></div>
-          
-          <div className="flex flex-col items-center space-y-20">
-            {events.map((event, index) => (
-              <div key={index} className="relative flex items-center w-full">
-                {/* Left Side - Time */}
-                {index % 2 === 0 ? (
-                  <div className="w-1/2 text-right pr-12">
+        <div className="flex justify-center">
+          <div className="relative w-full max-w-4xl">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-white h-full"></div>
+            
+            <div className="flex flex-col items-center space-y-20">
+              {events.map((event, index) => (
+                <div key={index} className="relative flex items-center w-full">
+                  {/* Left Side - Time */}
+                  <div className="w-1/3 text-right">
                     <p className="text-white font-semibold text-2xl">{event.time}</p>
                   </div>
-                ) : <div className="w-1/2"></div>}
 
-                {/* Timeline Circle */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10">
-                  <div className={`w-16 h-16 rounded-full ${event.color} flex items-center justify-center`}>
-                    {event.icon && (
-                      <event.icon sx={{ 
-                        fontSize: '2rem',
-                        color: 'white'
-                      }} />
-                    )}
+                  {/* Timeline Circle */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10">
+                    <div className={`w-16 h-16 rounded-full ${event.color} flex items-center justify-center`}>
+                      {event.icon && (
+                        <event.icon sx={{ 
+                          fontSize: '2rem',
+                          color: 'white'
+                        }} />
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Content (Right Side) */}
+                  <div className="w-2/3 pl-56">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      viewport={{ once: true }}
+                    >
+                      <h3 className="text-white font-bold text-3xl mb-2">{event.title}</h3>
+                      {event.subtitle && (
+                        <p className="text-zinc-400 text-xl">{event.subtitle}</p>
+                      )}
+                    </motion.div>
                   </div>
                 </div>
-
-                {/* Right Side - Time */}
-                {index % 2 !== 0 ? (
-                  <div className="w-1/2 text-left pl-12">
-                    <p className="text-white font-semibold text-2xl">{event.time}</p>
-                  </div>
-                ) : <div className="w-1/2"></div>}
-
-                {/* Content */}
-                <div className={`absolute w-1/2 ${
-                  index % 2 === 0 
-                    ? 'left-1/2 pl-24' 
-                    : 'right-1/2 pr-24 text-right'
-                }`}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <h3 className="text-white font-bold text-3xl mb-2">{event.title}</h3>
-                    {event.subtitle && (
-                      <p className="text-zinc-400 text-xl">{event.subtitle}</p>
-                    )}
-                  </motion.div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

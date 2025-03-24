@@ -11,7 +11,7 @@ import { motion } from "framer-motion"
 // Custom throttle function
 const throttle = (func: Function, limit: number) => {
   let inThrottle: boolean
-  return function(...args: any[]) {
+  return function(this: any, ...args: any[]) {
     if (!inThrottle) {
       func.apply(this, args)
       inThrottle = true
@@ -80,6 +80,26 @@ const Navbar = () => {
             className="text-white hover:text-primary text-sm font-bold tracking-tighter">
             Events
           </button>
+          <div className="relative">
+            <button 
+              onClick={() => setIsTeamDropdownOpen(!isTeamDropdownOpen)}
+              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+              Teams
+              <ChevronDown className="inline ml-1" />
+            </button>
+            {isTeamDropdownOpen && (
+              <div className="absolute left-0 mt-2 w-48 bg-zinc-800 rounded-md shadow-lg z-10">
+                <button onClick={() => handleNavigation('#team')}
+                  className="block text-white hover:text-primary text-sm font-bold tracking-tighter px-4 py-2">
+                  Core Team
+                </button>
+                <button onClick={() => handleNavigation('/faculty-coordinators')}
+                  className="block text-white hover:text-primary text-sm font-bold tracking-tighter px-4 py-2">
+                  Faculty Coordinators
+                </button>
+              </div>
+            )}
+          </div>
           <button onClick={() => handleNavigation('#contact')}
             className="text-white hover:text-primary text-sm font-bold tracking-tighter">
             Contact
@@ -115,14 +135,22 @@ const Navbar = () => {
               className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
               Events
             </button>
-            <button onClick={() => handleNavigation('#team')}
+            <button onClick={() => setIsTeamDropdownOpen(!isTeamDropdownOpen)}
               className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
-              Core Team
+              Teams
             </button>
-            <button onClick={() => handleNavigation('/faculty-coordinators')}
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
-              Faculty Coordinators
-            </button>
+            {isTeamDropdownOpen && (
+              <div className="flex flex-col space-y-2 pl-4">
+                <button onClick={() => handleNavigation('#team')}
+                  className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
+                  Core Team
+                </button>
+                <button onClick={() => handleNavigation('/faculty-coordinators')}
+                  className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
+                  Faculty Coordinators
+                </button>
+              </div>
+            )}
             <button onClick={() => handleNavigation('#contact')}
               className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
               Contact

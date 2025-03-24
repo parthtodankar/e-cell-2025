@@ -14,19 +14,19 @@ const sponsors = [
     image: "/sponsors_ECell/cerave.png"
   },
   {
-    name: "DYPUShop",
+    name: "DYPU Shop",
     image: "/sponsors_ECell/DYPUSHOP.png"
   },
   {
-    name: "NI",
+    name: "Nishorama",
     image: "/sponsors_ECell/ni.jpg"
   },
   {
-    name: "RanuCreations",
+    name: "Ranu Creations",
     image: "/sponsors_ECell/ranu.png"
   },
   {
-    name: "RuskaLUXURY",
+    name: "Ruska LUXURY",
     image: "/sponsors_ECell/Ruska.jpg"
   },
   {
@@ -34,7 +34,7 @@ const sponsors = [
     image: "/sponsors_ECell/Ukiyo.png"
   },
   {
-    name: "Union Bank",
+    name: "Union Bank of India",
     image: "/sponsors_ECell/unionbank.png"
   },
   {
@@ -115,8 +115,21 @@ const SponsorCard = ({ sponsor, index }: { sponsor: { name: string; image: strin
   )
 }
 
-const FlipCard = ({ index, speaker }: { index: number; speaker: { name: string; image: string; designation: string } }) => {
+const FlipCard = ({ index }: { index: number }) => {
   const [isFlipped, setIsFlipped] = useState(false)
+
+  // Array of card descriptions
+  const cardDescriptions = [
+    "Vishal Aditya Singh, a television actor, overcame industry challenges through perseverance and self-improvement. Known for his versatility in fiction and reality TV, he advocates for authenticity, ethical practices, and a growth mindset in the entertainment industry.",
+    
+    "Ramnek Chhipa, founder and CEO of Nishorama, is a Mumbai-based entrepreneur focused on innovation and business growth. He emphasizes action over excessive planning, believing that real change comes from starting rather than just analyzing, scheduling, or overthinking ideas.",
+
+    "Ria Mehta, co-founder and creative director of Nishorama, is a Mumbai-based entrepreneur, model, and vocalist. With a strong personal brand, she blends creativity and business, leveraging her influence to drive innovation and growth in the entrepreneurial and digital space.",
+    
+    "Sanjay Gagnani, an actor known for 'Kundali Bhagya', embodies an entrepreneurial mindset through philanthropy and business. He founded the 'Smitara Foundation' and co-founded 'Ruska Luxury', showcasing resilience, adaptability, and innovation in diversifying his professional pursuits beyond acting.",
+    
+   
+  ];
 
   return (
     <motion.div 
@@ -145,8 +158,8 @@ const FlipCard = ({ index, speaker }: { index: number; speaker: { name: string; 
               <div className="w-full h-full rounded-lg overflow-hidden z-10 relative
                             shadow-lg group-hover:shadow-2xl transition-shadow">
                 <Image
-                  src={speaker.image}
-                  alt={speaker.name}
+                  src={speakers[index].image}
+                  alt={speakers[index].name}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -162,7 +175,7 @@ const FlipCard = ({ index, speaker }: { index: number; speaker: { name: string; 
                           bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900
                           shadow-lg group-hover:shadow-2xl transition-shadow">
               <p className="text-white text-sm font-semibold leading-relaxed drop-shadow-lg">
-                Stay tuned for the speaker announcement!
+                {cardDescriptions[index]}
               </p>
             </div>
           </div>
@@ -171,8 +184,8 @@ const FlipCard = ({ index, speaker }: { index: number; speaker: { name: string; 
 
       {/* Speaker name and designation */}
       <div className="text-center">
-        <h3 className="text-xl font-semibold text-white mb-2">{speaker.name}</h3>
-        <p className="text-zinc-400 text-sm">{speaker.designation}</p>
+        <h3 className="text-xl font-semibold text-white mb-2">{speakers[index].name}</h3>
+        <p className="text-zinc-400 text-sm">{speakers[index].designation}</p>
       </div>
     </motion.div>
   )
@@ -189,10 +202,10 @@ const SpeakerSponsors = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl font-bold text-center mb-12 text-white">Speakers</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">Our Esteemed Speakers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto">
             {speakers.map((speaker, index) => (
-              <FlipCard key={index} index={index} speaker={speaker} />
+              <FlipCard key={index} index={index} />
             ))}
           </div>
         </motion.div>
