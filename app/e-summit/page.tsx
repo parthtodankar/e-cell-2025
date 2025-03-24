@@ -1,10 +1,22 @@
 "use client";
 
+import dynamic from 'next/dynamic';
 import Navbar from "@/components/navbar";
 // import Footer from "@/components/footer";
-import CountdownWithAurora from "@/components/countdown-with-aurora";
-import ESummitSchedule from "@/components/e-summit-schedule";
-import SpeakerSponsors from "@/components/speaker-sponsors";
+
+// Dynamically import heavy components
+const CountdownWithAurora = dynamic(() => import("@/components/countdown-with-aurora"), {
+  ssr: false,
+  loading: () => <div className="w-full h-screen bg-zinc-950" />
+});
+
+const SpeakerSponsors = dynamic(() => import("@/components/speaker-sponsors"), {
+  ssr: false
+});
+
+const ESummitSchedule = dynamic(() => import("@/components/e-summit-schedule"), {
+  ssr: false
+});
 
 const ESummitPage = () => {
   // Set your target date for E-Summit 2025
@@ -17,9 +29,9 @@ const ESummitPage = () => {
         <CountdownWithAurora 
           targetDate={targetDate}
           colorStops={["#ffd319", "#ff2975", "#8c1eff"]}
-          amplitude={1.2}
-          blend={0.6}
-          speed={0.5}
+          amplitude={0.8}
+          blend={0.4}
+          speed={0.3}
         />
       </div>
       <ESummitSchedule />

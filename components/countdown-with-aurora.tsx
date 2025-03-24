@@ -16,9 +16,9 @@ interface CountdownProps {
 const CountdownWithAurora: React.FC<CountdownProps> = ({
   targetDate,
   colorStops = ["#ffd319", "#ff2975", "#8c1eff"],
-  amplitude = 1.0,
-  blend = 0.5,
-  speed = 0.5,
+  amplitude = 0.8,
+  blend = 0.4,
+  speed = 0.3,
 }) => {
   const [mounted, setMounted] = useState(false)
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })

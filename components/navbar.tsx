@@ -8,6 +8,18 @@ import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
 import { motion } from "framer-motion"
 
+// Custom throttle function
+const throttle = (func: Function, limit: number) => {
+  let inThrottle: boolean
+  return function(...args: any[]) {
+    if (!inThrottle) {
+      func.apply(this, args)
+      inThrottle = true
+      setTimeout(() => inThrottle = false, limit)
+    }
+  }
+}
+
 const Navbar = () => {
   const [isFloating, setIsFloating] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,9 +29,9 @@ const Navbar = () => {
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsFloating(window.scrollY > 50)
-    }
+    const handleScroll = throttle(() => {
+      setIsFloating(window.scrollY > 10)
+    }, 100)
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
