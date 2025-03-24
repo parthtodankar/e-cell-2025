@@ -36,6 +36,10 @@ const sponsors = [
   {
     name: "Union Bank",
     image: "/sponsors_ECell/unionbank.png"
+  },
+  {
+    name: "Nutribs",
+    image: "/sponsors_ECell/nutribs.png"
   }
 ]
 
@@ -100,9 +104,8 @@ const SpeakerSponsors = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl font-bold text-center mb-12 text-white">Speakers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {/* Speaker cards */}
-            {[...Array(8)].map((_, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {[...Array(4)].map((_, index) => (
               <FlipCard key={index} index={index} />
             ))}
           </div>
@@ -124,7 +127,8 @@ const SpeakerSponsors = () => {
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff2975] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000" />
           <div className="absolute bottom-0 left-1/2 w-64 h-64 bg-[#8c1eff] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto relative z-10">
+          {/* Modified grid layout for 3x3 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
             {sponsors.map((sponsor, index) => (
               <SponsorCard key={index} sponsor={sponsor} index={index} />
             ))}

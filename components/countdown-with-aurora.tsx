@@ -61,7 +61,7 @@ const CountdownWithAurora: React.FC<CountdownProps> = ({
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center px-4">
         {/* E-Summit Logo Section - Top */}
         <div className="mb-auto mt-20 md:mt-32">
-          <div className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] mx-auto">
+          <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] mx-auto">
             <Image
               src="/esummit-logo.png"
               alt="E-Summit Logo"
