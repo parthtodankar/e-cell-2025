@@ -47,7 +47,7 @@ const speakers = [
   {
     name: "Vishal Aditya Singh",
     image: "/speakers/speaker1.png",
-    designation: "Coming Soon"
+    designation: "Film Actor"
   },
   {
     name: "Speaker 2",
@@ -57,12 +57,12 @@ const speakers = [
   {
     name: "Ria Mehta",
     image: "/speakers/speaker3.jpg",
-    designation: "Coming Soon"
+    designation: "Professional Content Creator"
   },
   {
     name: "Sanjay Gagnani",
     image: "/speakers/speaker4.jpg",
-    designation: "Coming Soon"
+    designation: "FIlm Actor"
   }
 ]
 
