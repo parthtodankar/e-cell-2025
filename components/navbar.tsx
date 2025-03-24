@@ -53,83 +53,70 @@ const Navbar = () => {
           <Image src="/logo.png" alt="E-cell MOTIF RAIT Logo" width={30} height={30} />
           <span className="text-lg font-bold text-white tracking-tighter">E-Cell RAIT</span>
         </Link>
-        <div className="flex items-center space-x-4">
-          <div className="hidden md:flex items-center space-x-6">
-            <button onClick={() => handleNavigation('#about')} 
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
-              About
-            </button>
-            <button onClick={() => handleNavigation('#domains')}
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
-              Domains
-            </button>
-            <button onClick={() => handleNavigation('#events')}
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
-              Events
-            </button>
-            <div className="relative">
-              <button 
-                className="text-white hover:text-primary text-sm font-bold tracking-tighter flex items-center"
-                onClick={() => setIsTeamDropdownOpen(!isTeamDropdownOpen)}
-              >
-                Team <ChevronDown className="w-4 h-4 ml-1" />
-              </button>
-              {isTeamDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 bg-zinc-950/95 backdrop-blur-md rounded-md py-2 min-w-[160px]">
-                  <button onClick={() => handleNavigation('#team')}
-                    className="block w-full text-left px-4 py-2 text-white hover:text-primary text-sm font-bold tracking-tighter">
-                    Core Team
-                  </button>
-                  <button onClick={() => handleNavigation('/faculty-coordinators')}
-                    className="block w-full text-left px-4 py-2 text-white hover:text-primary text-sm font-bold tracking-tighter">
-                    Faculty Coordinators
-                  </button>
-                </div>
-              )}
-            </div>
-            <button onClick={() => handleNavigation('#contact')}
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
-              Contact
-            </button>
-            <button onClick={() => handleNavigation('/e-summit')}
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
-              E-SUMMIT
-            </button>
-          </div>
-          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <Menu className="w-5 h-5" />
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-6">
+          <button onClick={() => handleNavigation('#about')} 
+            className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+            About
+          </button>
+          <button onClick={() => handleNavigation('#domains')}
+            className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+            Domains
+          </button>
+          <button onClick={() => handleNavigation('#events')}
+            className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+            Events
+          </button>
+          <button onClick={() => handleNavigation('#contact')}
+            className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+            Contact
+          </button>
+          <button onClick={() => handleNavigation('/e-summit')}
+            className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+            E-SUMMIT
           </button>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden text-white p-2 hover:bg-zinc-800/50 rounded-lg"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <Menu className="w-6 h-6" />
+        </button>
       </div>
+
+      {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-zinc-950/95 backdrop-blur-md">
+        <div className="md:hidden bg-zinc-950/95 backdrop-blur-md border-t border-zinc-800/50">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <button onClick={() => handleNavigation('#about')} 
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+              className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
               About
             </button>
             <button onClick={() => handleNavigation('#domains')}
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+              className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
               Domains
             </button>
             <button onClick={() => handleNavigation('#events')}
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+              className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
               Events
             </button>
             <button onClick={() => handleNavigation('#team')}
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+              className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
               Core Team
             </button>
             <button onClick={() => handleNavigation('/faculty-coordinators')}
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+              className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
               Faculty Coordinators
             </button>
             <button onClick={() => handleNavigation('#contact')}
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+              className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
               Contact
             </button>
             <button onClick={() => handleNavigation('/e-summit')}
-              className="text-white hover:text-primary text-sm font-bold tracking-tighter">
+              className="text-white hover:text-primary text-sm font-bold tracking-tighter text-left">
               E-SUMMIT
             </button>
           </div>

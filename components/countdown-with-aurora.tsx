@@ -58,10 +58,10 @@ const CountdownWithAurora: React.FC<CountdownProps> = ({
       </div>
 
       {/* Content overlay with flex column */}
-      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center px-4">
+      <div className="relative z-10 w-full h-full flex flex-col items-center justify-start pt-16 md:pt-32 px-2 md:px-4">
         {/* E-Summit Logo Section - Top */}
-        <div className="mb-auto mt-20 md:mt-32">
-          <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] mx-auto">
+        <div className="mb-8 md:mb-20">
+          <div className="relative w-[250px] h-[250px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] mx-auto">
             <Image
               src="/esummit-logo.png"
               alt="E-Summit Logo"
@@ -73,22 +73,22 @@ const CountdownWithAurora: React.FC<CountdownProps> = ({
         </div>
 
         {/* Countdown timer - Bottom */}
-        <div className="mb-20 md:mb-32">
-          <div className="flex flex-wrap items-start justify-center gap-4 md:gap-8">
+        <div className="w-full overflow-x-auto">
+          <div className="flex items-center justify-center gap-1 md:gap-8 min-w-min px-2">
             {Object.entries(timeLeft).map(([unit, value], index) => (
               <>
                 <div key={unit} className="timer">
-                  <div className="rounded-xl bg-black/40 backdrop-blur-md p-8 md:p-10
-                                min-w-[160px] md:min-w-[200px] 
-                                flex items-center justify-center flex-col gap-4
+                  <div className="rounded-xl bg-black/40 backdrop-blur-md p-2 md:p-10
+                                min-w-[65px] md:min-w-[200px] 
+                                flex items-center justify-center flex-col gap-1 md:gap-4
                                 shadow-[inset_0_2px_4px_rgba(0,0,0,0.4)]
                                 border border-white/5">
-                    <h3 className="font-bold text-5xl md:text-8xl lg:text-9xl text-white text-center
+                    <h3 className="font-bold text-2xl md:text-8xl lg:text-9xl text-white text-center
                                  transition-all duration-300 ease-in-out
                                  [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
                       {value.toString().padStart(2, '0')}
                     </h3>
-                    <p className="text-xl md:text-3xl uppercase font-medium text-white/80 text-center 
+                    <p className="text-[10px] md:text-3xl uppercase font-medium text-white/80 text-center 
                                 w-full tracking-wider
                                 [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
                       {unit}
@@ -96,8 +96,8 @@ const CountdownWithAurora: React.FC<CountdownProps> = ({
                   </div>
                 </div>
                 {index < Object.entries(timeLeft).length - 1 && (
-                  <div className="flex items-center justify-center mt-8">
-                    <span className="text-5xl md:text-8xl lg:text-9xl font-bold text-white/90
+                  <div className="flex items-center justify-center">
+                    <span className="text-2xl md:text-8xl lg:text-9xl font-bold text-white/90
                                    [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">:</span>
                   </div>
                 )}
