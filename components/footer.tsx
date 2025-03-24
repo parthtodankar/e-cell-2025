@@ -1,8 +1,29 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import { motion } from "framer-motion"
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const Footer = () => {
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const handleNavigation = (path: string) => {
+    if (path.startsWith('#') && pathname === '/') {
+      const element = document.querySelector(path)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    } else if (path.startsWith('#') && pathname !== '/') {
+      router.push(`/${path}`)
+    } else {
+      router.push(path)
+    }
+  }
+
   return (
     <footer className="bg-zinc-950 text-white">
       <div className="container mx-auto px-4 py-12">
@@ -10,43 +31,58 @@ const Footer = () => {
           {/* Logo and About */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <Image src="/logo.svg" alt="E-CELL RAIT Logo" width={40} height={40} />
+              <Image src="/logo.png" alt="E-CELL RAIT Logo" width={40} height={40} />
               <span className="text-xl font-bold tracking-tighter">E-Cell RAIT</span>
             </Link>
             <p className="text-zinc-400 text-sm">
               Empowering the next generation of entrepreneurs through innovation, education, and collaboration.
             </p>
           </div>
- {/* added footer  */}
+
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="#about" className="text-zinc-400 hover:text-primary text-sm transition-colors">
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <button
+                  onClick={() => handleNavigation('#about')}
+                  className="text-zinc-400 hover:text-primary text-sm transition-colors"
+                >
                   About
-                </Link>
-              </li>
-              <li>
-                <Link href="#domains" className="text-zinc-400 hover:text-primary text-sm transition-colors">
+                </button>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <button
+                  onClick={() => handleNavigation('#domains')}
+                  className="text-zinc-400 hover:text-primary text-sm transition-colors"
+                >
                   Domains
-                </Link>
-              </li>
-              <li>
-                <Link href="#events" className="text-zinc-400 hover:text-primary text-sm transition-colors">
+                </button>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <button
+                  onClick={() => handleNavigation('#events')}
+                  className="text-zinc-400 hover:text-primary text-sm transition-colors"
+                >
                   Events
-                </Link>
-              </li>
-              <li>
-                <Link href="#team" className="text-zinc-400 hover:text-primary text-sm transition-colors">
+                </button>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <button
+                  onClick={() => handleNavigation('#team')}
+                  className="text-zinc-400 hover:text-primary text-sm transition-colors"
+                >
                   Team
-                </Link>
-              </li>
-              <li>
-                <Link href="/e-summit" className="text-zinc-400 hover:text-primary text-sm transition-colors">
+                </button>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <button
+                  onClick={() => handleNavigation('/e-summit')}
+                  className="text-zinc-400 hover:text-primary text-sm transition-colors"
+                >
                   E-SUMMIT
-                </Link>
-              </li>
+                </button>
+              </motion.li>
             </ul>
           </div>
 

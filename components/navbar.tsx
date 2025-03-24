@@ -50,7 +50,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
-          <Image src="/logo.svg" alt="E-cell MOTIF RAIT Logo" width={30} height={30} />
+          <Image src="/logo.png" alt="E-cell MOTIF RAIT Logo" width={30} height={30} />
           <span className="text-lg font-bold text-white tracking-tighter">E-Cell RAIT</span>
         </Link>
         <div className="flex items-center space-x-4">
