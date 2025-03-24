@@ -50,9 +50,9 @@ const speakers = [
     designation: "Film Actor"
   },
   {
-    name: "Speaker 2",
+    name: "Ramnek Chhipa",
     image: "/speakers/speaker2.jpg",
-    designation: "Coming Soon"
+    designation: "Entrepreneur"
   },
   {
     name: "Ria Mehta",
