@@ -57,7 +57,7 @@ const speakers = [
   {
     name: "Ria Mehta",
     image: "/speakers/speaker3.jpg",
-    designation: "Professional Content Creator"
+    designation: " Content Creator"
   },
   {
     name: "Sanjay Gagnani",
