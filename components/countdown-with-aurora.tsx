@@ -68,7 +68,7 @@ const CountdownWithAurora: React.FC<CountdownProps> = ({
       <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-between py-10 px-4">
         {/* E-Summit Logo Section - Top */}
         <div className="w-full">
-          <div className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] mx-auto">
+          <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] mx-auto">
             <Image
               src="/esummit-logo.png"
               alt="E-Summit Logo"
@@ -77,12 +77,6 @@ const CountdownWithAurora: React.FC<CountdownProps> = ({
               priority
             />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white text-center mt-6 mb-2">
-            E-Summit&apos;24
-          </h1>
-          <p className="text-xl md:text-2xl text-white/80 text-center">
-            Coming Soon
-          </p>
         </div>
 
         {/* Countdown timer - Bottom */}

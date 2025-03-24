@@ -43,6 +43,29 @@ const sponsors = [
   }
 ]
 
+const speakers = [
+  {
+    name: "Vishal Aditya Singh",
+    image: "/speakers/speaker1.png",
+    designation: "Film Actor"
+  },
+  {
+    name: "Speaker 2",
+    image: "/speakers/speaker2.jpg",
+    designation: "Coming Soon"
+  },
+  {
+    name: "Ria Mehta",
+    image: "/speakers/speaker3.jpg",
+    designation: "Professional Content Creator"
+  },
+  {
+    name: "Sanjay Gagnani",
+    image: "/speakers/speaker4.jpg",
+    designation: "FIlm Actor"
+  }
+]
+
 const SponsorCard = ({ sponsor, index }: { sponsor: { name: string; image: string }; index: number }) => {
   return (
     <motion.div 
@@ -92,6 +115,69 @@ const SponsorCard = ({ sponsor, index }: { sponsor: { name: string; image: strin
   )
 }
 
+const FlipCard = ({ index, speaker }: { index: number; speaker: { name: string; image: string; designation: string } }) => {
+  const [isFlipped, setIsFlipped] = useState(false)
+
+  return (
+    <motion.div 
+      className="flex flex-col"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: index * 0.1 }}
+    >
+      <div className="relative h-[400px] md:h-[450px] perspective-1000 mb-4 group">
+        <motion.div
+          className="w-full h-full relative preserve-3d transition-all duration-500 cursor-pointer"
+          animate={{ rotateY: isFlipped ? 180 : 0 }}
+          onClick={() => setIsFlipped(!isFlipped)}
+        >
+          {/* Front of card */}
+          <div className="absolute w-full h-full backface-hidden">
+            <div className="bg-zinc-900/70 backdrop-blur-md rounded-lg p-2 h-full shadow-lg 
+                          border border-transparent transition-all duration-300
+                          group-hover:border-gradient-to-r group-hover:from-[#ffd319] group-hover:to-[#ff2975]
+                          relative overflow-hidden">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300
+                            bg-gradient-to-r from-[#ffd319] via-[#ff2975] to-[#8c1eff]
+                            animate-gradient-slow" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-300
+                            bg-gradient-to-r from-[#ffd319] via-[#ff2975] to-[#8c1eff]" />
+              <div className="w-full h-full rounded-lg overflow-hidden z-10 relative
+                            shadow-lg group-hover:shadow-2xl transition-shadow">
+                <Image
+                  src={speaker.image}
+                  alt={speaker.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Back of card */}
+          <div className="absolute w-full h-full backface-hidden rotate-y-180">
+            <div className="bg-zinc-900/70 backdrop-blur-md rounded-lg p-6 h-full 
+                          flex flex-col justify-center items-center text-center 
+                          bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900
+                          shadow-lg group-hover:shadow-2xl transition-shadow">
+              <p className="text-white text-sm font-semibold leading-relaxed drop-shadow-lg">
+                Stay tuned for the speaker announcement!
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Speaker name and designation */}
+      <div className="text-center">
+        <h3 className="text-xl font-semibold text-white mb-2">{speaker.name}</h3>
+        <p className="text-zinc-400 text-sm">{speaker.designation}</p>
+      </div>
+    </motion.div>
+  )
+}
+
 const SpeakerSponsors = () => {
   return (
     <section className="w-full min-h-screen bg-zinc-950">
@@ -104,9 +190,9 @@ const SpeakerSponsors = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl font-bold text-center mb-12 text-white">Speakers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {[...Array(4)].map((_, index) => (
-              <FlipCard key={index} index={index} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto">
+            {speakers.map((speaker, index) => (
+              <FlipCard key={index} index={index} speaker={speaker} />
             ))}
           </div>
         </motion.div>
@@ -136,73 +222,6 @@ const SpeakerSponsors = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
-
-const FlipCard = ({ index }: { index: number }) => {
-  const [isFlipped, setIsFlipped] = useState(false)
-
-  return (
-    <motion.div 
-      className="flex flex-col"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: index * 0.1 }}
-    >
-      {/* Flippable card container */}
-      <div className="relative h-[220px] perspective-1000 mb-4 group">
-        <motion.div
-          className="w-full h-full relative preserve-3d transition-all duration-500 cursor-pointer"
-          animate={{ rotateY: isFlipped ? 180 : 0 }}
-          onClick={() => setIsFlipped(!isFlipped)}
-        >
-          {/* Front of card */}
-          <div className="absolute w-full h-full backface-hidden">
-            <div className="bg-zinc-900/70 backdrop-blur-md rounded-lg p-4 h-full shadow-lg 
-                          border border-transparent transition-all duration-300
-                          group-hover:border-gradient-to-r group-hover:from-[#ffd319] group-hover:to-[#ff2975]
-                          relative overflow-hidden">
-              {/* Animated background gradient */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300
-                            bg-gradient-to-r from-[#ffd319] via-[#ff2975] to-[#8c1eff]
-                            animate-gradient-slow" />
-
-              {/* Glowing effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-300
-                            bg-gradient-to-r from-[#ffd319] via-[#ff2975] to-[#8c1eff]" />
-
-              {/* Content container */}
-              <div className="w-full h-full bg-zinc-800 rounded-lg overflow-hidden z-10 relative
-                            shadow-lg group-hover:shadow-2xl transition-shadow">
-                <div className="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-700 animate-gradient" />
-              </div>
-            </div>
-          </div>
-
-          {/* Back of card */}
-          <div className="absolute w-full h-full backface-hidden rotate-y-180">
-            <div className="bg-zinc-900/70 backdrop-blur-md rounded-lg p-6 h-full 
-                          flex flex-col justify-center items-center text-center 
-                          bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900
-                          shadow-lg group-hover:shadow-2xl transition-shadow">
-              <p className="text-white text-sm font-semibold leading-relaxed drop-shadow-lg">
-                Haha, Wait for the speaker to be announced!
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Hover effect overlay */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity rounded-lg pointer-events-none
-                      bg-gradient-to-r from-[#ffd319] via-[#ff2975] to-[#8c1eff]" />
-      </div>
-
-      {/* Static text content below card */}
-      <div className="text-center">
-        <h3 className="text-xl font-semibold text-white mb-2">Coming Soon</h3>
-        <p className="text-zinc-400 text-sm">Stay tuned for exciting speakers!</p>
-      </div>
-    </motion.div>
   )
 }
 
