@@ -39,6 +39,7 @@ const AboutSection = () => {
         </motion.div>
       </div>
     </section>
+    // just a normmal push 
   )
 }
 
