@@ -72,7 +72,7 @@ const speakers = [
     designation: "Content Creator, Founder of Nishorama"
   },
   {
-    name: "Sanjay Gagnani",
+    name: "Ssanjay Gaggnani",
     image: "/speakers/speaker4.jpg",
     designation: "Actor, Entrepreneur, Philanthropist \n Founder, Smritara Foundation \n Co-Founder, Ruska Luxury"
   }

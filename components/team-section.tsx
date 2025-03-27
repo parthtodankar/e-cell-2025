@@ -6,16 +6,16 @@ import { Linkedin, Instagram } from "lucide-react"
 import Image from 'next/image'
 
 const teamMembers = [
-  { name: "Niharika Ahuja", role: "President", image: "/core-images/niharika.jpg", instagram: "https://www.instagram.com/niharikaahujaa/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/niharika-ahuja-6bb42725b/" },
-  { name: "Aryan Masali", role: "Vice President", image: "/core-images/aryan.jpg", instagram: "https://www.instagram.com/aryanmasali_3108/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/aryan-masali-13b823254/" },
+  { name: "Niharika Ahuja", role: "President", image: "/core-images/niharika.JPG", instagram: "https://www.instagram.com/niharikaahujaa/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/niharika-ahuja-6bb42725b/" },
+  { name: "Aryan Masali", role: "Vice President", image: "/core-images/aryan.JPG", instagram: "https://www.instagram.com/aryanmasali_3108/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/aryan-masali-13b823254/" },
   { name: "Pushkar Patil", role: "General Secretary", image: "/core-images/pushkar.JPG", instagram: "https://www.instagram.com/pushkarpatil._/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/patil-pushkar/" },
-  { name: "Niral Pillewan", role: "Chief Execution Officer", image: "/core-images/niral.jpg", instagram: "https://www.instagram.com/niralpillewan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "" },
-  { name: "Aryan Joshi", role: "Chief Event Organizer", image: "/core-images/aryan_joshi.jpg", instagram: "https://www.instagram.com/aryxnjoshi/?utm_source=ig_web_button_share_sheet", linkedin: "" },
-  { name: "Mihir Agashe", role: "Chief Marketing Officer", image: "/core-images/mihir.jpg", instagram: "https://www.instagram.com/comm3mihir?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/mihir-agashe-92597b249/" },
-  { name: "Parth Todankar", role: "Chief Technical Officer", image: "/core-images/parth.jpg", instagram: "https://www.instagram.com/parth_tdnkr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/parth-todankar-986146184/" },
-  { name: "Meet Raval", role: "Public Relations Officer", image: "/core-images/meet.jpg", instagram: "https://www.instagram.com/meet_raval_27?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/meet-raval-35b021253/" },
-  { name: "Aarya Patil", role: "IIC Chief", image: "/core-images/aarya.jpg", instagram: "https://www.instagram.com/aaryapatiill/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/aarya-patil-98166625a/" },
-  { name: "Vishnu Gupta", role: "Treasurer", image: "/core-images/vishnu.jpg", instagram: "https://www.instagram.com/vishnu_gupta_10?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "" },
+  { name: "Niral Pillewan", role: "Chief Execution Officer", image: "/core-images/niral.JPG", instagram: "https://www.instagram.com/niralpillewan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "" },
+  { name: "Aryan Joshi", role: "Chief Event Organizer", image: "/core-images/aryan_joshi.JPG", instagram: "https://www.instagram.com/aryxnjoshi/?utm_source=ig_web_button_share_sheet", linkedin: "" },
+  { name: "Mihir Agashe", role: "Chief Marketing Officer", image: "/core-images/mihir.JPG", instagram: "https://www.instagram.com/comm3mihir?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/mihir-agashe-92597b249/" },
+  { name: "Parth Todankar", role: "Chief Technical Officer", image: "/core-images/parth.JPG", instagram: "https://www.instagram.com/parth_tdnkr?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/parth-todankar-986146184/" },
+  { name: "Meet Raval", role: "Public Relations Officer", image: "/core-images/meet.JPG", instagram: "https://www.instagram.com/meet_raval_27?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "https://www.linkedin.com/in/meet-raval-35b021253/" },
+  { name: "Aarya Patil", role: "IIC Chief", image: "/core-images/aarya.JPG", instagram: "https://www.instagram.com/aaryapatiill/?utm_source=ig_web_button_share_sheet", linkedin: "https://www.linkedin.com/in/aarya-patil-98166625a/" },
+  { name: "Vishnu Gupta", role: "Treasurer", image: "/core-images/vishnu.JPG", instagram: "https://www.instagram.com/vishnu_gupta_10?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", linkedin: "" },
 ]
 
 const ProfileCard = ({ name, role, image, instagram, linkedin }: { name: string; role: string; image: string; instagram: string; linkedin: string }) => {
