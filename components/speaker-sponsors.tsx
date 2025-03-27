@@ -40,6 +40,18 @@ const sponsors = [
   {
     name: "Nutribs",
     image: "/sponsors_ECell/nutribs.png"
+  },
+  {
+    name: "EngageU",
+    image: "/sponsors_ECell/EngageU.png"
+  },
+  {
+    name: "Coffee Break Bistro at Tej's",
+    image: "/sponsors_ECell/coffeebreak.png"
+  },
+  {
+    name: "Friends Car Self Drive Car Rental",
+    image: "/sponsors_ECell/carRental.jpg"
   }
 ]
 
