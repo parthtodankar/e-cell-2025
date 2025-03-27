@@ -59,22 +59,22 @@ const speakers = [
   {
     name: "Vishal Aditya Singh",
     image: "/speakers/speaker1.png",
-    designation: "Film Actor"
+    designation: "Actor"
   },
   {
     name: "Ramnek Chhipa",
     image: "/speakers/speaker2.jpg",
-    designation: "Entrepreneur"
+    designation: "Founder, Nishorama"
   },
   {
     name: "Ria Mehta",
     image: "/speakers/speaker3.jpg",
-    designation: " Content Creator"
+    designation: "Content Creator, Founder of Nishorama"
   },
   {
     name: "Sanjay Gagnani",
     image: "/speakers/speaker4.jpg",
-    designation: "FIlm Actor"
+    designation: "Actor, Entrepreneur, Philanthropist \n Founder, Smritara Foundation \n Co-Founder, Ruska Luxury"
   }
 ]
 
