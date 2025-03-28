@@ -76,18 +76,18 @@ const ESummitSchedule = () => {
             
             <div className="flex flex-col items-center space-y-20">
               {events.map((event, index) => (
-                <div key={index} className="relative flex items-center w-full">
+                <div key={index} className="relative flex flex-col md:flex-row items-center w-full">
                   {/* Left Side - Time */}
-                  <div className="w-1/3 text-right">
+                  <div className="w-full md:w-1/3 text-right mb-4 md:mb-0">
                     <p className="text-white font-semibold text-2xl">{event.time}</p>
                   </div>
 
                   {/* Timeline Circle */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10">
-                    <div className={`w-16 h-16 rounded-full ${event.color} flex items-center justify-center`}>
+                    <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full ${event.color} flex items-center justify-center`}>
                       {event.icon && (
                         <event.icon sx={{ 
-                          fontSize: '2rem',
+                          fontSize: '1.5rem md:2rem',
                           color: 'white'
                         }} />
                       )}
@@ -95,16 +95,16 @@ const ESummitSchedule = () => {
                   </div>
 
                   {/* Content (Right Side) */}
-                  <div className="w-2/3 pl-56">
+                  <div className="w-full md:w-2/3 pl-0 md:pl-56">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                       viewport={{ once: true }}
                     >
-                      <h3 className="text-white font-bold text-3xl mb-2">{event.title}</h3>
+                      <h3 className="text-white font-bold text-2xl md:text-3xl mb-2">{event.title}</h3>
                       {event.subtitle && (
-                        <p className="text-zinc-400 text-xl">{event.subtitle}</p>
+                        <p className="text-zinc-400 text-lg md:text-xl">{event.subtitle}</p>
                       )}
                     </motion.div>
                   </div>
@@ -118,4 +118,4 @@ const ESummitSchedule = () => {
   );
 };
 
-export default ESummitSchedule; 
+export default ESummitSchedule;
